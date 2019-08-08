@@ -121,3 +121,4 @@ jetpack组件学习- navigation
         
     val arg: RegisterFragmentArgs by navArgs()
     tvRegister.text = arg.parameter
+         
