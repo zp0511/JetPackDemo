@@ -1,7 +1,8 @@
-package com.demo.jetpack
+package com.demo.jetpack.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.demo.jetpack.R
 
 class MainActivity : AppCompatActivity() {
 
