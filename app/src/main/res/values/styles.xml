@@ -8,4 +8,35 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CommonEditStyle" parent="ZeroZero.CenterHorizontal">
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="layout_constraintHeight_default">percent</item>
+        <item name="layout_constraintHeight_percent">0.1</item>
+        <item name="layout_constraintWidth_default">percent</item>
+        <item name="layout_constraintWidth_percent">0.8</item>
+        <item name="android:background">@drawable/common_et_bg_grey</item>
+    </style>
+
+    <style name="CommonButtonStyle" parent="ZeroZero.CenterHorizontal">
+        <item name="layout_constraintHeight_default">percent</item>
+        <item name="layout_constraintHeight_percent">0.1</item>
+        <item name="layout_constraintWidth_default">percent</item>
+        <item name="layout_constraintWidth_percent">0.8</item>
+        <item name="android:background">@drawable/common_btn_bg_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="ZeroZero.CenterHorizontal">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+    </style>
+
+    <style name="ZeroZero">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
 </resources>

@@ -19,12 +19,12 @@ class WelComeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button3.setOnClickListener {
+        btn_login.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("key", "value")
             findNavController().navigate(R.id.login, bundle)
         }
-        button2.setOnClickListener {
+        btn_register.setOnClickListener {
             val direction =
                 WelComeFragmentDirections
                     .actionWelcomeRegister()

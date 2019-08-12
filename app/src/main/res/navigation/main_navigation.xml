@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:startDestination="@id/infoFragment"
+            android:id="@+id/main_navigation">
+    <fragment
+            android:id="@+id/infoFragment"
+            android:name="com.demo.jetpack.fragment.HomeFragment"
+            android:label="HomeFragment"/>
+    <fragment
+            android:id="@+id/marketFragment"
+            android:name="com.demo.jetpack.fragment.LikeFragment"
+            android:label="LikeFragment"
+            />
+    <fragment
+            android:id="@+id/meFragment"
+            android:name="com.demo.jetpack.fragment.MyFragment"
+            android:label="MyFragment"/>
+</navigation>
