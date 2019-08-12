@@ -1,4 +1,4 @@
-package com.demo.jetpack.activity
+package com.demo.jetpack.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

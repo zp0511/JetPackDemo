@@ -1,4 +1,4 @@
-package com.demo.jetpack.fragment
+package com.demo.jetpack.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,8 +26,7 @@ class WelComeFragment : Fragment() {
         }
         btn_register.setOnClickListener {
             val direction =
-                WelComeFragmentDirections
-                    .actionWelcomeRegister()
+                WelComeFragmentDirections.actionWelcomeRegister()
                     .setParameter("kchome")
             findNavController().navigate(direction)
         }

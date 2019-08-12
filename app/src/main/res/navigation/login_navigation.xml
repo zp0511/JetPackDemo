@@ -7,10 +7,10 @@
     <fragment
             android:id="@+id/login"
             tools:layout="@layout/fragment_login"
-            android:name="com.demo.jetpack.fragment.LoginFragment"
+            android:name="com.demo.jetpack.ui.fragment.LoginFragment"
             android:label="LoginFragment"/>
     <fragment
-            android:name="com.demo.jetpack.fragment.WelComeFragment"
+            android:name="com.demo.jetpack.ui.fragment.WelComeFragment"
             android:label="WelComeFragment"
             android:id="@+id/welcome"
             tools:layout="@layout/fragment_welcome">
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
             android:id="@+id/register"
-            android:name="com.demo.jetpack.fragment.RegisterFragment"
+            android:name="com.demo.jetpack.ui.fragment.RegisterFragment"
             android:label="RegisterFragment"
             tools:layout="@layout/fragment_register">
         <argument

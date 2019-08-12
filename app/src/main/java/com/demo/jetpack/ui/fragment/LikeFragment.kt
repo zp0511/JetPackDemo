@@ -1,4 +1,4 @@
-package com.demo.jetpack.fragment
+package com.demo.jetpack.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import com.demo.jetpack.R
 /**
  * Created by zp on 2019/8/9.
  */
-class MyFragment : Fragment() {
+class LikeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_my, container, false)
+        return inflater.inflate(R.layout.fragment_like, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
