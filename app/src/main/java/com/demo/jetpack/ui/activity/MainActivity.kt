@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.demo.jetpack.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         initBottomNavigationView(bnv_view,navController)
     }
     private fun initBottomNavigationView(bottomNavigationView: BottomNavigationView, navController: NavController) {
-        bottomNavigationView.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-
-        }
+//        bottomNavigationView.setupWithNavController(navController)
+//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+//
+//        }
     }
 }

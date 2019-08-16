@@ -5,15 +5,17 @@
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="model"
-                  type="com.demo.jetpack.viewmodel.LoginModel"/>
+                  type="com.demo.jetpack.ui.login.LoginViewModel"/>
+        <variable name="holder"
+                  type="com.demo.jetpack.ui.login.LoginFragment"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <EditText
-                android:inputType="number"
-                android:text="@={model.n.get()}"
+                app:addTextChangedListener="@{model.nameWatcher}"
+                android:inputType="text"
                 android:id="@+id/et_account"
                 android:layout_marginTop="50dp"
                 style="@style/CommonEditStyle"
@@ -24,8 +26,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
-                android:onTextChanged="@{(text,start,before,count)->model.onPwdChange(text)}"
-                android:text="@{model.p.get()}"
+                app:addTextChangedListener="@{model.pwdWatcher}"
                 android:id="@+id/et_pwd"
                 style="@style/CommonEditStyle"
                 app:layout_constraintTop_toBottomOf="@+id/et_account"
@@ -38,8 +39,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/et_account"/>
 
         <Button
-                android:enabled="@{model.n.get().isEmpty()||model.p.get().isEmpty() ? false : true}"
-                android:onClick="@{() -> model.login()}"
+                android:onClick="@{holder::login}"
                 android:id="@+id/btn_login"
                 style="@style/CommonButtonStyle"
                 app:layout_constraintTop_toTopOf="parent"

@@ -7,7 +7,7 @@
     <fragment
             android:id="@+id/login"
             tools:layout="@layout/fragment_login"
-            android:name="com.demo.jetpack.ui.fragment.LoginFragment"
+            android:name="com.demo.jetpack.ui.login.LoginFragment"
             android:label="LoginFragment"/>
     <fragment
             android:name="com.demo.jetpack.ui.fragment.WelComeFragment"
