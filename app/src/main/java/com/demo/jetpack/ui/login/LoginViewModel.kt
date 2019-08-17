@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.demo.jetpack.base.safeLaunch
 import com.demo.jetpack.listener.SimpleWatcher
+import com.demo.jetpack.util.toast.ToastUtils
 
 /**
  * Created by zp on 2019/8/16.
@@ -16,7 +17,11 @@ class LoginViewModel(private val repository: LoginRepository) : ViewModel() {
 
     fun login(userName: String, passWord: String) {
         viewModelScope.safeLaunch {
-            repository.login(userName, passWord)
+            repository.login(userName, passWord, {
+                ToastUtils.show(it)
+            }, {
+                ToastUtils.show(it)
+            })
         }
     }
 

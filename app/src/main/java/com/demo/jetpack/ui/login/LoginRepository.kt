@@ -12,8 +12,14 @@ class LoginRepository {
     /*
     * suspend 套起函数
     * */
-    suspend fun login(userName: String, passWord: String) = withContext(Dispatchers.IO){
-        val response = RetrofitManager.apiService.login(userName, passWord)
-        LogUtils.debug(response)
-    }
+    suspend fun login(userName: String, passWord: String, success: (message:String) -> Unit, error: (message: String) -> Unit) =
+        withContext(Dispatchers.IO) {
+            val response = RetrofitManager.apiService.login(userName, passWord)
+            if (response.body()?.errorCode == 0) {
+                success.invoke(response.message())
+            } else {
+                error.invoke(response.message())
+            }
+            LogUtils.debug(response)
+        }
 }

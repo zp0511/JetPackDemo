@@ -14,7 +14,6 @@
             android:layout_height="match_parent">
 
         <EditText
-                app:addTextChangedListener="@{model.nameWatcher}"
                 android:inputType="text"
                 android:id="@+id/et_account"
                 android:layout_marginTop="50dp"
@@ -26,7 +25,6 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
-                app:addTextChangedListener="@{model.pwdWatcher}"
                 android:id="@+id/et_pwd"
                 style="@style/CommonEditStyle"
                 app:layout_constraintTop_toBottomOf="@+id/et_account"
