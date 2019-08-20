@@ -10,4 +10,7 @@
     <color name="textSecond">#8d9ca9</color>
 
     <color name="norm_grey">#eeeeee</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_1976D2">#1976D2</color>
 </resources>

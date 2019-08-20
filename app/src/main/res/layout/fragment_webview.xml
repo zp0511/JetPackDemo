@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="url"
+                type="String"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+                style="@style/AppTheme.Toolbar">
+
+            <TextView
+                    android:text="文章详情"
+                    style="@style/AppTheme.Toolbar.Title"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <WebView
+                    android:overScrollMode="never"
+                    android:layout_width="match_parent"
+                    android:id="@+id/webView"
+                    bind:url="@{url}"
+                    android:layout_height="match_parent">
+
+            </WebView>
+
+            <ProgressBar
+                    android:id="@+id/pb"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

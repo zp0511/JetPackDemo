@@ -1,5 +1,6 @@
 package com.demo.jetpack.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.IdRes
@@ -8,6 +9,7 @@ import androidx.navigation.NavController
 import com.demo.jetpack.R
 import com.demo.jetpack.base.BaseFragment
 import com.demo.jetpack.databinding.FragmentLoginBinding
+import com.demo.jetpack.ui.activity.MainActivity
 
 /**
  * Created by zp on 2019/8/7.
@@ -23,6 +25,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     override fun initFragment(view: View, savedInstanceState: Bundle?) {
         mBinding.holder = this
+        mBinding.model = mViewModel
     }
 
     /*
@@ -32,7 +35,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         val account = mBinding.etAccount.text.toString()
         val pwd = mBinding.etPwd.text.toString()
         if (account.isNotEmpty() && pwd.isNotEmpty()) {
-            mViewModel.login(account, pwd)
+            mViewModel.login(account, pwd) {
+                startActivity(Intent(requireActivity(), MainActivity::class.java))
+                requireActivity().finish()
+            }
         }
     }
 

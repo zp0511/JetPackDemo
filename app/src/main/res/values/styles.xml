@@ -1,19 +1,22 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 设置activity切换动画 -->
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/color_ffffff</item>
+        <item name="colorPrimaryDark">@color/color_ffffff</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="CommonEditStyle" parent="ZeroZero.CenterHorizontal">
         <item name="android:drawablePadding">10dp</item>
         <item name="android:paddingStart">10dp</item>
+        <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:paddingEnd">10dp</item>
         <item name="layout_constraintHeight_default">percent</item>
-        <item name="layout_constraintHeight_percent">0.1</item>
+        <item name="layout_constraintHeight_percent">0.07</item>
         <item name="layout_constraintWidth_default">percent</item>
         <item name="layout_constraintWidth_percent">0.8</item>
         <item name="android:background">@drawable/common_et_bg_grey</item>
@@ -21,10 +24,10 @@
 
     <style name="CommonButtonStyle" parent="ZeroZero.CenterHorizontal">
         <item name="layout_constraintHeight_default">percent</item>
-        <item name="layout_constraintHeight_percent">0.1</item>
+        <item name="layout_constraintHeight_percent">0.07</item>
         <item name="layout_constraintWidth_default">percent</item>
         <item name="layout_constraintWidth_percent">0.8</item>
-        <item name="android:background">@drawable/common_btn_bg_blue</item>
+        <item name="android:background">@drawable/common_btn_bg</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginStart">20dp</item>
         <item name="android:layout_marginEnd">20dp</item>
@@ -38,5 +41,29 @@
     <style name="ZeroZero">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
+    </style>
+
+    <!--Toolbar-->
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/color_ffffff</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:typeface">normal</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <!--Toolbar 标题-->
+    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:gravity">center</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="DialogPushInOutAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_push_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_push_out</item>
     </style>
 </resources>

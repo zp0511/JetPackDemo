@@ -15,10 +15,11 @@ class LoginViewModel(private val repository: LoginRepository) : ViewModel() {
     val n = MutableLiveData<String>()//用于观察name的值 内部提供了set和get方法
     val p = MutableLiveData<String>()
 
-    fun login(userName: String, passWord: String) {
+    fun login(userName: String, passWord: String, success: () -> Unit) {
         viewModelScope.safeLaunch {
             repository.login(userName, passWord, {
-                ToastUtils.show(it)
+                ToastUtils.show("登录成功")
+                success.invoke()
             }, {
                 ToastUtils.show(it)
             })

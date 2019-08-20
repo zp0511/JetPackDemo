@@ -3,25 +3,41 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <variable name="model"
-                  type="com.demo.jetpack.ui.login.LoginViewModel"/>
-        <variable name="holder"
-                  type="com.demo.jetpack.ui.login.LoginFragment"/>
+
+        <variable
+                name="model"
+                type="com.demo.jetpack.ui.login.LoginViewModel"/>
+
+        <variable
+                name="holder"
+                type="com.demo.jetpack.ui.login.LoginFragment"/>
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                style="@style/AppTheme.Toolbar">
+
+            <TextView
+                    style="@style/AppTheme.Toolbar.Title"
+                    android:text="登录"/>
+        </androidx.appcompat.widget.Toolbar>
+
         <EditText
+                app:layout_constraintVertical_bias="0.4"
                 android:inputType="text"
                 android:id="@+id/et_account"
-                android:layout_marginTop="50dp"
                 style="@style/CommonEditStyle"
-                app:layout_constraintBottom_toTopOf="@+id/et_pwd"
-                android:hint="account"
+                android:hint="账号"
                 android:drawableStart="@drawable/common_ic_account"
                 tools:ignore="MissingConstraints"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
@@ -29,7 +45,7 @@
                 style="@style/CommonEditStyle"
                 app:layout_constraintTop_toBottomOf="@+id/et_account"
                 android:layout_marginTop="20dp"
-                android:hint="password"
+                android:hint="密码"
                 android:drawableStart="@drawable/common_ic_pwd"
                 android:inputType="textPassword"
                 tools:ignore="MissingConstraints"
@@ -39,11 +55,12 @@
         <Button
                 android:onClick="@{holder::login}"
                 android:id="@+id/btn_login"
+                android:textColor="@color/color_ffffff"
                 style="@style/CommonButtonStyle"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.9"
-                app:layout_constraintHeight_percent="0.07"
-                android:text="Sign in"
+                app:layout_constraintHeight_percent="0.06"
+                android:text="登录"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="MissingConstraints"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

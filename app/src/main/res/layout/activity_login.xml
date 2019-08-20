@@ -6,7 +6,7 @@
         android:layout_height="match_parent">
 
     <fragment
-            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:name="com.demo.jetpack.base.CustomNavHostFragment"
             app:navGraph="@navigation/login_navigation"
             app:defaultNavHost="true"
             android:id="@+id/my_host_nav_fragment"

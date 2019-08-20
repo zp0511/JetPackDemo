@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -11,6 +12,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.demo.jetpack.R
+import com.demo.jetpack.util.StatusBarUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
@@ -31,6 +34,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment(), CoroutineScope b
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding.lifecycleOwner = this
+        if (needTransparentStatus())
+            StatusBarUtil.setColor(requireActivity(), ContextCompat.getColor(requireContext(), R.color.color_ffffff), 0)
         initFragment(view, savedInstanceState)
     }
 
@@ -43,6 +48,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment(), CoroutineScope b
     abstract fun getLayoutId(): Int
 
     abstract fun initFragment(view: View, savedInstanceState: Bundle?)
+
+    protected open fun needTransparentStatus(): Boolean = true
 
     fun <T : ViewModel> getViewModel(clazz: Class<T>): T = ViewModelProvider(this).get(clazz)
 

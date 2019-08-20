@@ -11,6 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.demo.jetpack.R
+import com.demo.jetpack.util.StatusBarUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
@@ -29,7 +31,11 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity(), Corouti
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityStackManager.addActivity(this)
-        if (needTransparentStatus()) transparentStatusBar()
+        if (needTransparentStatus()) transparentStatusBar() else StatusBarUtil.setColor(
+            this,
+            ContextCompat.getColor(this, R.color.color_ffffff),
+            0
+        )
         mBinding.lifecycleOwner = this
         initActivity(savedInstanceState)
     }
