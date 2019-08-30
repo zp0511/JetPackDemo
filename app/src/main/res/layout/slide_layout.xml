@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/color_ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </data>
-
-    <LinearLayout
-            android:background="@color/color_ffffff"
+    <ImageView
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <ImageView
-                android:scaleType="centerCrop"
-                android:layout_width="match_parent"
-                android:src="@drawable/icon"
-                android:layout_height="@dimen/dp_150"/>
-    </LinearLayout>
-</layout>
+            android:src="@drawable/icon"
+            android:layout_height="@dimen/dp_150"/>
+</LinearLayout>

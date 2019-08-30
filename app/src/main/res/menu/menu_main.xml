@@ -2,20 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:id="@+id/infoFragment"
+		android:id="@+id/main"
 		android:icon="@drawable/main_ic_market"
 		android:title="主页"/>
 
 	<item
-		android:id="@+id/marketFragment"
+		android:id="@+id/like"
 		android:icon="@drawable/main_ic_favorite"
 		android:title="喜欢"/>
 
 	<item
-		android:id="@+id/meFragment"
+		android:id="@+id/my"
 		android:icon="@drawable/main_ic_me"
 		android:title="我的"/>
-
 
 
 </menu>

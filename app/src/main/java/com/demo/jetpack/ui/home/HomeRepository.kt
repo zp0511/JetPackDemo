@@ -1,14 +1,17 @@
 package com.demo.jetpack.ui.home
 
+import android.view.View
+import android.widget.TextView
 import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
 import androidx.recyclerview.widget.DiffUtil
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.BaseViewHolder
 import com.demo.jetpack.R
 import com.demo.jetpack.base.BaseApplication
-import com.demo.jetpack.base.BasePagedListAdapter
-import com.demo.jetpack.base.BaseViewHolder
+import com.demo.jetpack.base.BasePagerListAdapter
+import com.demo.jetpack.base.BaseViewHolders
 import com.demo.jetpack.base.safeLaunch
-import com.demo.jetpack.databinding.ItemArticleBinding
 import com.demo.jetpack.entity.ArticleDetail
 import com.demo.jetpack.network.RetrofitManager
 import com.demo.jetpack.util.PreferencesHelper
@@ -112,13 +115,23 @@ class HomeDtaSource(private val repository: HomeRepository) : PageKeyedDataSourc
     }
 }
 
-class HomeArticleAdapter : BasePagedListAdapter<ArticleDetail, ItemArticleBinding>(DIFF_CALLBACK) {
-    override fun getLayoutId(viewType: Int): Int {
-        return R.layout.item_article
+class HomeAdapter : BaseQuickAdapter<ArticleDetail, BaseViewHolder>(R.layout.item_article) {
+    override fun convert(helper: BaseViewHolder, item: ArticleDetail?) {
+        helper.setText(R.id.tvContent, item?.title)
+            ?.setText(R.id.tvName, item?.author)
+            ?.setText(R.id.tvTime, item?.niceDate)
+    }
+}
+
+class HomeArticleAdapter : BasePagerListAdapter<ArticleDetail, View>(DIFF_CALLBACK) {
+    override fun setVariable(data: ArticleDetail, position: Int, holder: BaseViewHolders<View>) {
+        holder.view.findViewById<TextView>(R.id.tvContent).text = data.title
+        holder.view.findViewById<TextView>(R.id.tvName).text = data.author
+        holder.view.findViewById<TextView>(R.id.tvTime).text = data.niceDate
     }
 
-    override fun setVariable(data: ArticleDetail, position: Int, holder: BaseViewHolder<ItemArticleBinding>) {
-        holder.binding.detail = data
+    override fun getLayoutId(viewType: Int): Int {
+        return R.layout.item_article
     }
 
     companion object {

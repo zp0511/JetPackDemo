@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:startDestination="@id/mainFragment">
+            android:id="@+id/main_navigation"
+            app:startDestination="@id/infoFragment">
     <fragment
-            android:id="@+id/mainFragment"
+            android:id="@+id/infoFragment"
             android:name="com.demo.jetpack.ui.home.HomeFragment"
             android:label="HomeFragment">
+    </fragment>
+    <fragment
+            android:id="@+id/marketFragment"
+            android:name="com.demo.jetpack.ui.fragment.LikeFragment"
+            android:label="LikeFragment"/>
+    <fragment
+            android:name="com.demo.jetpack.ui.fragment.MyFragment"
+            android:id="@+id/meFragment"
+            android:label="MyFragment"/>
+    <fragment
+            android:id="@+id/webViewFragment"
+            android:name="com.demo.jetpack.ui.web.WebViewFragment"
+            android:label="WebViewFragment">
         <action
                 android:id="@+id/action_web_view"
                 app:destination="@id/webViewFragment"/>
     </fragment>
-    <fragment
-            android:id="@+id/webViewFragment"
-            android:name="com.demo.jetpack.ui.web.WebViewFragment"
-            android:label="WebViewFragment"/>
 </navigation>

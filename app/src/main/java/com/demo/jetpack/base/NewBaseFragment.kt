@@ -5,13 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import com.demo.jetpack.R
 import com.demo.jetpack.util.StatusBarUtil
 import kotlinx.coroutines.CoroutineScope
@@ -21,19 +17,14 @@ import kotlinx.coroutines.cancel
 /**
  * Created by zp on 2019/8/16.
  */
-abstract class BaseFragment<VB : ViewDataBinding> : Fragment(), CoroutineScope by MainScope() {
-    protected lateinit var mBinding: VB
-    protected lateinit var mNavController: NavController
+abstract class NewBaseFragment : Fragment(), CoroutineScope by MainScope() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
-        mNavController = NavHostFragment.findNavController(this)
-        return mBinding.root
+        return inflater.inflate(getLayoutId(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mBinding.lifecycleOwner = this
         if (needTransparentStatus())
             StatusBarUtil.setColor(requireActivity(), ContextCompat.getColor(requireContext(), R.color.color_ffffff), 0)
         initFragment(view, savedInstanceState)
@@ -42,7 +33,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment(), CoroutineScope b
     override fun onDestroy() {
         super.onDestroy()
         cancel()
-        mBinding.unbind()
     }
 
     abstract fun getLayoutId(): Int

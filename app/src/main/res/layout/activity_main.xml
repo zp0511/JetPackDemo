@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-    <data>
-
-    </data>
-
-    <FrameLayout
+    <com.demo.jetpack.weiget.CustomViewpager
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            app:defaultNavHost="true"
+            android:layout_weight="1"
+            android:id="@+id/viewPager"
+            android:layout_height="0dp"/>
 
-        <fragment
-                android:layout_width="match_parent"
-                android:name="com.demo.jetpack.base.CustomNavHostFragment"
-                app:navGraph="@navigation/main_navigation"
-                app:defaultNavHost="true"
-                android:id="@+id/my_nav_host_fragment"
-                android:layout_height="match_parent"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            app:menu="@menu/menu_main"
+            android:id="@+id/navigationView"
+            android:background="@android:color/white"
+            app:itemIconTint="@drawable/main_bottom_color_selector"
+            app:itemTextColor="@drawable/main_bottom_color_selector"
+            android:layout_height="@dimen/dp_50">
 
-    </FrameLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-</layout>
+</LinearLayout>

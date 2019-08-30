@@ -1,6 +1,7 @@
 package com.demo.jetpack.ui.home
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.LivePagedListBuilder
@@ -13,6 +14,7 @@ import com.demo.jetpack.entity.ArticleDetail
  */
 class HomeModel(private val repository: HomeRepository) : ViewModel() {
     var articleList: LiveData<PagedList<ArticleDetail>>? = null
+    var data: MutableLiveData<List<ArticleDetail>>? = MutableLiveData()
     fun getArticle() {
         articleList =
             LivePagedListBuilder(
@@ -24,6 +26,16 @@ class HomeModel(private val repository: HomeRepository) : ViewModel() {
                     .setInitialLoadSizeHint(20)
                     .build()
             ).build()
+    }
+
+    fun getHomeData() {
+        viewModelScope.safeLaunch {
+            data?.value = repository.homeArticle(0)
+        }
+    }
+
+    fun getLocalData() {
+        data?.value = repository.localArticle()
     }
 
     fun localArticle() {
