@@ -9,10 +9,11 @@ import com.demo.jetpack.R
 import com.demo.jetpack.base.NewBaseFragment
 import com.demo.jetpack.base.OnItemClickListener
 import com.demo.jetpack.ui.activity.LoginActivity
-import com.demo.jetpack.ui.web.WebViewFragment
+import com.demo.jetpack.ui.web.WebViewActivity
 import com.demo.jetpack.util.PreferencesHelper
 import com.demo.jetpack.util.toast.ToastUtils
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by zp on 2019/8H/9.
@@ -43,7 +44,7 @@ class HomeFragment : NewBaseFragment() {
         })
         adapter.setOnItemListener(OnItemClickListener { position, view ->
             val url = adapter.getItemData(position)?.link
-            WebViewFragment.detail(url ?: "")
+            activity?.startActivity<WebViewActivity>("url" to url)
         })
         navigationView.setNavigationItemSelectedListener { it ->
             when (it.itemId) {

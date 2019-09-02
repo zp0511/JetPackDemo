@@ -18,7 +18,7 @@ class WebViewFragment : BaseFragment<FragmentWebviewBinding>() {
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun initFragment(view: View, savedInstanceState: Bundle?) {
-        mBinding.url = arguments?.getString("url")
+        mBinding.url = activity?.intent?.getStringExtra("url")
 
         mBinding.webView.settings.apply {
             javaScriptEnabled = true
