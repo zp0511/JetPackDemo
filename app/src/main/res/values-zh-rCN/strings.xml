@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JetPack</string>
+    <string name="account" translatable="false">请输入账号</string>
+    <string name="icon" translatable="false">icon</string>
+    <string name="login" translatable="false">登录</string>
+    <string name="password" translatable="false">请输入密码</string>
+    <string name="version" translatable="false">1.1.0</string>
+</resources>

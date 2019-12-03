@@ -1,7 +1,6 @@
 package com.demo.jetpack.ui.home
 
 import android.view.View
-import android.widget.TextView
 import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
 import androidx.recyclerview.widget.DiffUtil
@@ -125,9 +124,9 @@ class HomeAdapter : BaseQuickAdapter<ArticleDetail, BaseViewHolder>(R.layout.ite
 
 class HomeArticleAdapter : BasePagerListAdapter<ArticleDetail, View>(DIFF_CALLBACK) {
     override fun setVariable(data: ArticleDetail, position: Int, holder: BaseViewHolders<View>) {
-        holder.view.findViewById<TextView>(R.id.tvContent).text = data.title
-        holder.view.findViewById<TextView>(R.id.tvName).text = data.author
-        holder.view.findViewById<TextView>(R.id.tvTime).text = data.niceDate
+        holder.setText(R.id.tvContent, data.title)
+            .setText(R.id.tvName, data.author)
+            .setText(R.id.tvTime, data.niceDate)
     }
 
     override fun getLayoutId(viewType: Int): Int {

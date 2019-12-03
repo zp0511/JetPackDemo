@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">JetPack</string>
+    <string name="app_name" translatable="false">JetPack</string>
+    <string name="account" translatable="false">Please enter your account number</string>
+    <string name="login" translatable="false">登录</string>
+    <string name="password" translatable="false">请输入密码</string>
+    <string name="icon" translatable="false">icon</string>
+    <string name="version" translatable="false">1.1.0</string>
+    <string name="team_a">TeamA</string>
+    <string name="team_b">TeamB</string>
+    <string name="a_point">50</string>
+    <string name="add_one">+1</string>
+    <string name="add_two">+2</string>
+    <string name="add_three">+3</string>
+    <string name="image_icon">image_icon</string>
 </resources>

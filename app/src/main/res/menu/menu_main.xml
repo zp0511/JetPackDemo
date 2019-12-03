@@ -9,7 +9,7 @@
 	<item
 		android:id="@+id/like"
 		android:icon="@drawable/main_ic_favorite"
-		android:title="喜欢"/>
+		android:title="比赛"/>
 
 	<item
 		android:id="@+id/my"

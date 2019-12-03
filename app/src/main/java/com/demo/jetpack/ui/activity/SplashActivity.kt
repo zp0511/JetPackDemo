@@ -32,7 +32,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                 finish()
             }, 500)
         } else {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }

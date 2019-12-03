@@ -24,6 +24,7 @@
         <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.LoginActivity"/>
         <activity android:name=".ui.web.WebViewActivity"/>
+        <activity android:name=".ui.activity.AssociationActivity"/>
     </application>
 
 </manifest>
