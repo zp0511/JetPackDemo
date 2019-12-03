@@ -10,6 +10,6 @@
             android:gravity="center"
             android:textSize="50px"
             android:textColor="@color/colorAccent"
-            android:background="@color/design_default_color_primary"
+            android:background="@color/color_ffffff"
             android:layout_height="match_parent"/>
 </LinearLayout>
